@@ -30,8 +30,9 @@ type Resource interface {
 	Destroy(Context) error
 }
 
-// Middler can be implemented to specify additional
-// middleware specific to the resource
+// Middler allows Resource implementations to provide
+// additional custom Middleware to the those already
+// configured.
 type Middler interface {
 	Use() []MiddlewareFunc
 }
